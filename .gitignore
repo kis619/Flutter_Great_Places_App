@@ -45,3 +45,4 @@ app.*.map.json
 
 # secret
 .env
+android/app/src/main/AndroidManifest.xml
