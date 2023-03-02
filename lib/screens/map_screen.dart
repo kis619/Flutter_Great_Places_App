@@ -20,7 +20,7 @@ class _MapScreenState extends State<MapScreen> {
   LatLng? _pickedLocation;
 
   void _selectLocation(LatLng position) {
-      print(position);
+    print(position);
     setState(() {
       _pickedLocation = position;
       print(position);
@@ -52,11 +52,17 @@ class _MapScreenState extends State<MapScreen> {
           zoom: 16,
         ),
         onTap: widget.isSelecting ? _selectLocation : null,
-        markers: _pickedLocation == null
+        markers: (_pickedLocation == null && widget.isSelecting == true)
             ? {}
             : {
                 Marker(
-                    markerId: const MarkerId('m1'), position: _pickedLocation!),
+                  markerId: const MarkerId('m1'),
+                  position: _pickedLocation ??
+                      LatLng(
+                        widget.initialLocation.latitude,
+                        widget.initialLocation.longitude,
+                      ),
+                ),
               },
       ),
     );
