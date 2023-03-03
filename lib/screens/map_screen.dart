@@ -20,10 +20,8 @@ class _MapScreenState extends State<MapScreen> {
   LatLng? _pickedLocation;
 
   void _selectLocation(LatLng position) {
-    print(position);
     setState(() {
       _pickedLocation = position;
-      print(position);
     });
   }
 

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:great_places/providers/great_places.dart';
 import 'package:great_places/screens/map_screen.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +17,7 @@ class PlaceInfoScreen extends StatelessWidget {
       appBar: AppBar(title: (Text(selectedPlace.title))),
       body: Column(
         children: [
-          Container(
+          SizedBox(
             height: 250,
             width: double.infinity,
             child: Image.file(
